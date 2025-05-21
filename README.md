@@ -346,6 +346,7 @@ Results:
  |----------------|-------------------------|-----------------------------------------------|
 | `setFormula()` | Assigns formula variant | `Post::setFormula(PostFormula::DetailedView)` |
 | `brew()`       | Executes transformation | `Alchemist::brew($collection\|$model)`        |
+| `brewBatch()`  | Executes transformation | `Alchemist::brewBatch($paginator)`            |
 
 ### Patterns
 
