@@ -1,12 +1,12 @@
 {
   "name": "mj/alchemist",
-  "version": "0.9.0",
-  "description": "An elegant alchemist for the Laravel framework.",
+  "version": "1.0.0",
+  "description": "The JSON Revolution for Laravel, a simple, fast, and elegant alternative to Laravel JSON Resource. ",
   "license": "MIT",
   "authors": [
     {
-      "name": "MJAdnan",
-      "email": "lumber.mj.74@gmail.com"
+      "name": "MightJack",
+      "email": "serri.adnan.47@gmail.com"
     }
   ],
   "require": {
