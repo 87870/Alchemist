@@ -1,6 +1,6 @@
 {
   "name": "serri/alchemist",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The JSON Revolution for Laravel, a simple, fast, and elegant alternative to Laravel JSON Resource. ",
   "license": "MIT",
   "authors": [
