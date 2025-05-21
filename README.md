@@ -40,7 +40,7 @@ The Solution: Laravel Alchemist - Formula Approach
 
 **One File to Rule Them All**
 
-Each model gets a single`SomeModelFormula.php`where you:
+Each model gets a single `SomeModelFormula.php` where you:
 
 ✅ Define all fields as simple strings in arrays.<br>
 ✅ Manage every API variation in one place.<br>
@@ -49,7 +49,7 @@ Each model gets a single`SomeModelFormula.php`where you:
 **Relationship Handling Made Simple**
 
 - Reference nested resources by their name only.
-- Each relation maintains its own`Formula::class`.
+- Each relation maintains its own `Formula::class`.
 - No more recursive resource nightmares.
 
 **Frontend-Friendly Flexibility**
@@ -86,7 +86,7 @@ You may install Alchemist using the Composer package manager:
   composer require serri/alchemist
 ```
 
-You can publish the Alchemist configuration file`config/alchemist.php` and the default`Formulas/Formula.php`using
+You can publish the Alchemist configuration file `config/alchemist.php` and the default `Formulas/Formula.php` using
 `vendor:publish` Artisan command:
 
 ```shell
@@ -114,7 +114,7 @@ To wield this package's magic effectively, you must understand these arcane prin
 ### **The Formulas Directory**
 
 - Your **sacred workshop** where all model formulas reside
-- Created automatically at`app/Formulas/Formula.php`when you publish the default formula class as we did in
+- Created automatically at `app/Formulas/Formula.php` when you publish the default formula class as we did in
   the [Installtion](#installtion) Section:
 
 ```php
@@ -128,7 +128,7 @@ class Formula
 
 ### Crafting Your Formulas
 
-Begin your alchemy by creating formula classes in`app/Formulas/`like so:
+Begin your alchemy by creating formula classes in `app/Formulas/` like so:
 
 ```php
 namespace App\Formulas;
@@ -145,12 +145,12 @@ class UserFormula extends Formula
 ```
 
 > #### Key Laws:
-> - #### Each model deserves its own formula class`ModelNameFormula.php`<br>
-> - #### The`BlankParchment`remains your fallback option.
+> - #### Each model deserves its own formula class `ModelNameFormula.php` <br>
+> - #### The `BlankParchment` remains your fallback option.
 
 ### Using package default Formula
 
-If you did not publish the`app/Formulas/Formula.php`, you can still use the default`Formula.php` provided by the package
+If you did not publish the `app/Formulas/Formula.php` , you can still use the default `Formula.php` provided by the package
 like this:
 
 ```php
@@ -188,7 +188,7 @@ class Post extends Model
 
 ### 2. Exposing Fields
 
-By default, everything included in`$fillable`array and`$guarded` array are automatically loaded in formulas.
+By default, everything included in `$fillable` array and `$guarded` array are automatically loaded in formulas.
 
 ```php
 use Serri\Alchemist\Concerns\HasAlchemyFormulas;
@@ -212,7 +212,7 @@ class Post extends Model
 
 ### 3. Exposing Relationships
 
-Relationships must be explicitly marked with the`#[Relation]`decorator to be available in formulas:
+Relationships must be explicitly marked with the `#[Relation]` decorator to be available in formulas:
 
 ```php
 use Serri\Alchemist\Decorators\Relation;
@@ -232,7 +232,7 @@ public function profile(): HasOne
 
 ### 4. Exposing Custom Methods
 
-Model methods require the`#[Mutagen]`decorator to be accessible in formulas:
+Model methods require the `#[Mutagen]` decorator to be accessible in formulas:
 
 ```php
 use Serri\Alchemist\Decorators\Mutagen;
@@ -251,13 +251,13 @@ public function isVerified(): bool
 ```
 
 > #### Keynotes
-> - #### `$fillable`/`$guarded`: are available to use in formulas by default.
-> - #### **Decorators:** Only`#[Relation]`and`#[Mutagen]`methods are exposed to formulas.
+> - #### `$fillable` / `$guarded` : are available to use in formulas by default.
+> - #### **Decorators:** Only `#[Relation]` and `#[Mutagen]` methods are exposed to formulas.
 
 ### 5. Crafting Formulas
 
 Once your models are properly configured, you can define formulas to transform your data. Formulas are defined in
-classes within the`app/Formulas/`directory.
+classes within the `app/Formulas/` directory.
 
 Here is an example:
 
