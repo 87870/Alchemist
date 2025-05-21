@@ -82,7 +82,7 @@ Each model gets a single`SomeModelFormula.php`where you:
 You may install Alchemist using the Composer package manager:
 
 ```bash
-  composer require mj/alchemist
+  composer require serri/alchemist
 ```
 
 You can publish the Alchemist configuration file`config/alchemist.php` and the default`Formulas/Formula.php`using`vendor:publish` Artisan command:
