@@ -1,8 +1,8 @@
 # 🧙🏻‍♂️ Laravel Alchemist ⚗️
 
-![Latest Version](https://img.shields.io/packagist/v/your-vendor/your-package.svg)
-![License](https://img.shields.io/packagist/l/your-vendor/your-package.svg)
-![Downloads](https://img.shields.io/packagist/dt/your-vendor/your-package.svg)
+![Latest Version](https://img.shields.io/packagist/v/serri/alchemist.svg)
+![License](https://img.shields.io/packagist/l/serri/alchemist.svg)
+![Downloads](https://img.shields.io/packagist/dt/serri/alchemist.svg)
 
 ### The JSON Revolution for Laravel, a simple, fast, and elegant alternative to Laravel JSON Resource.
 
