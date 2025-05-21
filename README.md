@@ -138,7 +138,7 @@ class UserFormula extends Formula
     # Define your transformations here.
     # ex:
     
-    const UserLoginFormula = ['id', 'username', /*...etc.*/]
+    const UserLogin = ['id', 'username', /*...etc.*/]
     
     // ... other formulas.
 }
@@ -266,11 +266,11 @@ namespace App\Formulas;
 
 class PostFormula extends Formula
 {
-    const AuthorFormula = ['id', 'title', 'author_profile'];
+    const Author = ['id', 'title', 'author_profile'];
     
     const WithComments = ['id', 'title', 'comments']
     
-    const DetailedFormula = ['id', 'title', 'description', 'comments', 'author_profile'] 
+    const Detailed = ['id', 'title', 'description', 'comments', 'author_profile'] 
 }
 
 ```
@@ -282,9 +282,9 @@ namespace App\Formulas;
 
 class ProfileFormula extends Formula
 {
-    const OnlyNameFormula = ['fullName'];
+    const OnlyName = ['fullName'];
     
-    const AnyOtherFormula = ['id', 'username', 'fullName']
+    const AnyOther = ['id', 'username', 'fullName']
 }
 ```
 
@@ -305,8 +305,8 @@ use Serri\Alchemist\Facades\Alchemist;
 $posts = Post::with('author.profile')->get();
 
 // 2. Specify which formulas to use
-Post::setFormula(PostFormula::AuthorFormula);
-Profile::setFormula(ProfileFormula::OnlyNameFormula);
+Post::setFormula(PostFormula::Author);
+Profile::setFormula(ProfileFormula::OnlyName);
 
 // 3. Process through Alchemist
 $transformedData = Alchemist::brew($posts);
