@@ -1,27 +1,26 @@
 # 🧙🏻‍♂️ Laravel Alchemist ⚗️
 
-![Latest Version](https://img.shields.io/packagist/v/serri/alchemist.svg)
-![License](https://img.shields.io/packagist/l/serri/alchemist.svg)
-![Downloads](https://img.shields.io/packagist/dt/serri/alchemist.svg)
+[![Latest Version](https://img.shields.io/packagist/v/serri/alchemist.svg?style=flat-square)](https://packagist.org/packages/serri/alchemist)
+[![License](https://img.shields.io/packagist/l/serri/alchemist.svg?style=flat-square)](https://packagist.org/packages/serri/alchemist)
+[![Total Downloads](https://img.shields.io/packagist/dt/serri/alchemist.svg?style=flat-square)](https://packagist.org/packages/serri/alchemist)
 
 ### The JSON Revolution for Laravel, a simple, fast, and elegant alternative to Laravel JSON Resource.
 
 ---
 
 ## 📖 Table of Contents
+
 1. [Philosophy](#philosophy)
 2. [Requirements](#requirements)
 3. [Installation](#installation)
-5. [Fundamentals](#fundamentals)
-6. [Quick Start](#quick-start)
-7. [Usage & Examples](#usage-examples)
-8. [Contributing](#contributing)
-9. [Changelog](#changelog)
-10. [License](#license)
+4. [Fundamentals](#fundamentals)
+5. [Quick Start](#quick-start)
+6. [Usage & Examples](#usage-examples)
+7. [License](#license)
 
 ---
 
-## 🔮 Philosophy - The Problem with Traditional Laravel Resources
+## <a id="philosophy"></a> 🔮 Philosophy - The Problem with Traditional Laravel Resources
 
 We've all been there:
 
@@ -65,12 +64,14 @@ Each model gets a single`SomeModelFormula.php`where you:
 - **True Maintainability:** All changes flow through controlled formulas.
 - **Team Friendly:** Frontend can request changes without breaking your flow.
 
-> *“Laravel Resources grant you the illusion of control – meticulous yet maddening. Laravel Alchemist surrenders this false dominion... and in its place conjures true magic.„*
+> *“Laravel Resources grant you the illusion of control – meticulous yet maddening. Laravel Alchemist surrenders this
+false dominion... and in its place conjures true magic.„*
 
 ---
 
 [//]: # (## ⚙️ Configuration)
-## 📋 Requirements
+
+## <a id="requirements"></a> 📋 Requirements
 
 - PHP ≥ 8.2
 - Laravel ≥ 11.x
@@ -81,37 +82,40 @@ Each model gets a single`SomeModelFormula.php`where you:
 
 You may install Alchemist using the Composer package manager:
 
-```bash
+```shell
   composer require serri/alchemist
 ```
 
-You can publish the Alchemist configuration file`config/alchemist.php` and the default`Formulas/Formula.php`using`vendor:publish` Artisan command:
+You can publish the Alchemist configuration file`config/alchemist.php` and the default`Formulas/Formula.php`using
+`vendor:publish` Artisan command:
 
-```bash
+```shell
    php artisan vendor:publish --provider="Serri\Alchemist\AlchemistServiceProvider"
 ```
 
 Or for configuration file using:
 
-```bash
+```shell
    php artisan vendor:publish --tag=alchemist-config
 ```
 
 For default formula class using:
 
-```bash
+```shell
     php artisan vendor:publish --tag=alchemist-formula
 ```
 
 ---
 
-## 📖 Fundamentals
+## <a id="fundamentals"></a> 📖 Fundamentals
 
 To wield this package's magic effectively, you must understand these arcane principles:
+
 ### **The Formulas Directory**
 
 - Your **sacred workshop** where all model formulas reside
-- Created automatically at`app/Formulas/Formula.php`when you publish the default formula class as we did in the [Installtion](#installtion) Section:
+- Created automatically at`app/Formulas/Formula.php`when you publish the default formula class as we did in
+  the [Installtion](#installtion) Section:
 
 ```php
 namespace App\Formulas;
@@ -123,6 +127,7 @@ class Formula
 ```
 
 ### Crafting Your Formulas
+
 Begin your alchemy by creating formula classes in`app/Formulas/`like so:
 
 ```php
@@ -143,9 +148,10 @@ class UserFormula extends Formula
 > - #### Each model deserves its own formula class`ModelNameFormula.php`<br>
 > - #### The`BlankParchment`remains your fallback option.
 
-
 ### Using package default Formula
-If you did not publish the`app/Formulas/Formula.php`, you can still use the default`Formula.php` provided by the package like this:
+
+If you did not publish the`app/Formulas/Formula.php`, you can still use the default`Formula.php` provided by the package
+like this:
 
 ```php
 namespace App\Formulas;
@@ -162,24 +168,11 @@ Relationships must be explicitly marked with the #[Relation] attribute to be ava
 
 ---
 
-## 🪄 Quick Start
+## <a id="quick-start"></a> 🪄 Quick Start
 
 ### 1. Model Configuration
 
-To enable formula support, models must either:
-
-Inherit from`AlchemyModel`.
-
-```php
-use Serri\Alchemist\Extensions\AlchemyModel;
-
-class Post extends AlchemyModel 
-{
-    //
-}
-```
-
-Or, Use`HasAlchemyFormulas`Trait.
+To enable formula support, models must use `HasAlchemyFormulas` Concern.
 
 ```php
 use Serri\Alchemist\Concerns\HasAlchemyFormulas;
@@ -256,14 +249,15 @@ public function isVerified(): bool
     return $this->email_verified_at !== null;
 }
 ```
+
 > #### Keynotes
 > - #### `$fillable`/`$guarded`: are available to use in formulas by default.
 > - #### **Decorators:** Only`#[Relation]`and`#[Mutagen]`methods are exposed to formulas.
 
-
 ### 5. Crafting Formulas
 
-Once your models are properly configured, you can define formulas to transform your data. Formulas are defined in classes within the`app/Formulas/`directory.
+Once your models are properly configured, you can define formulas to transform your data. Formulas are defined in
+classes within the`app/Formulas/`directory.
 
 Here is an example:
 
@@ -296,7 +290,7 @@ class ProfileFormula extends Formula
 
 ---
 
-## 🛠️ Usage & Examples
+## <a id="usage-examples"></a> 🛠️ Usage & Examples
 
 ### Basic Data Transformation
 
@@ -347,7 +341,8 @@ Results:
 ```
 
 ### Key Methods
-| Method         | Purpose                 |  Example                                      |
+
+| Method         | Purpose                 | Example                                       |
  |----------------|-------------------------|-----------------------------------------------|
 | `setFormula()` | Assigns formula variant | `Post::setFormula(PostFormula::DetailedView)` |
 | `brew()`       | Executes transformation | `Alchemist::brew($collection\|$model)`        |
@@ -412,3 +407,9 @@ public function __construct(
     }
 }
 ```
+
+---
+
+## <a id="licesnse"></a> 📜 License
+
+This project is open-source and available under the **MIT License**.
