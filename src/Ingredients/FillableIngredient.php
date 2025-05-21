@@ -1,0 +1,22 @@
+<?php
+
+
+namespace MJ\Alchemist\Ingredients;
+
+use MJ\Alchemist\Contracts\IngredientContract;
+
+final class FillableIngredient implements IngredientContract
+{
+
+    public static function ingredientName(): string
+    {
+        return 'fillable';
+    }
+
+    public static function infuse(string $ingredient, mixed $brewing): array
+    {
+        return [
+            $ingredient => $brewing[$ingredient]
+        ];
+    }
+}

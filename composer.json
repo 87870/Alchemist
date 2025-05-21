@@ -1,0 +1,38 @@
+{
+  "name": "mj/alchemist",
+  "version": "0.9.0",
+  "description": "An elegant alchemist for the Laravel framework.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "MJAdnan",
+      "email": "lumber.mj.74@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^10.2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "MJ\\Alchemist\\": "src/"
+    },
+    "files": [
+      "src/Helpers/functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MJ\\Alchemist\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MJ\\Alchemist\\Providers\\AlchemistServiceProvider"
+      ]
+    }
+  }
+}
