@@ -1,9 +1,9 @@
 <?php
 
 
-namespace MJ\Alchemist\Ingredients;
+namespace Serri\Alchemist\Ingredients;
 
-use MJ\Alchemist\Contracts\IngredientContract;
+use Serri\Alchemist\Contracts\IngredientContract;
 
 final class GuardedIngredient implements IngredientContract
 {

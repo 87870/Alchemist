@@ -1,14 +1,14 @@
 <?php
 
-namespace MJ\Alchemist\Services;
+namespace Serri\Alchemist\Services;
 
 use Illuminate\Database\Eloquent\Collection as ECollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection as SCollection;
-use MJ\Alchemist\Context\BrewingContext;
-use MJ\Alchemist\Resolvers\BrewingHandlerResolver;
-use MJ\Alchemist\Support\BrewingConfigLoader;
-use MJ\Alchemist\Support\Druid;
+use Serri\Alchemist\Context\BrewingContext;
+use Serri\Alchemist\Resolvers\BrewingHandlerResolver;
+use Serri\Alchemist\Support\BrewingConfigLoader;
+use Serri\Alchemist\Support\Druid;
 use ReflectionException;
 
 class Alchemist

@@ -1,6 +1,6 @@
 <?php
 
-namespace MJ\Alchemist\Helpers;
+namespace Serri\Alchemist\Helpers;
 
 use ReflectionClass;
 use ReflectionMethod;

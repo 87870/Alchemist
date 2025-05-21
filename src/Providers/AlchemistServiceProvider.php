@@ -1,9 +1,9 @@
 <?php
 
-namespace MJ\Alchemist\Providers;
+namespace Serri\Alchemist\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use MJ\Alchemist\Services\Alchemist;
+use Serri\Alchemist\Services\Alchemist;
 
 class AlchemistServiceProvider extends ServiceProvider
 {

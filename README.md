@@ -88,7 +88,7 @@ You may install Alchemist using the Composer package manager:
 You can publish the Alchemist configuration file`config/alchemist.php` and the default`Formulas/Formula.php`using`vendor:publish` Artisan command:
 
 ```bash
-   php artisan vendor:publish --provider="MJ\Alchemist\AlchemistServiceProvider"
+   php artisan vendor:publish --provider="Serri\Alchemist\AlchemistServiceProvider"
 ```
 
 Or for configuration file using:
@@ -150,7 +150,7 @@ If you did not publish the`app/Formulas/Formula.php`, you can still use the defa
 ```php
 namespace App\Formulas;
 
-use MJ\Alchemist\Formulas\Formula
+use Serri\Alchemist\Formulas\Formula
 
 class UserFormula extends Formula
 {
@@ -171,7 +171,7 @@ To enable formula support, models must either:
 Inherit from`AlchemyModel`.
 
 ```php
-use MJ\Alchemist\Extensions\AlchemyModel;
+use Serri\Alchemist\Extensions\AlchemyModel;
 
 class Post extends AlchemyModel 
 {
@@ -182,7 +182,7 @@ class Post extends AlchemyModel
 Or, Use`HasAlchemyFormulas`Trait.
 
 ```php
-use MJ\Alchemist\Concerns\HasAlchemyFormulas;
+use Serri\Alchemist\Concerns\HasAlchemyFormulas;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -198,7 +198,7 @@ class Post extends Model
 By default, everything included in`$fillable`array and`$guarded` array are automatically loaded in formulas.
 
 ```php
-use MJ\Alchemist\Concerns\HasAlchemyFormulas;
+use Serri\Alchemist\Concerns\HasAlchemyFormulas;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -222,7 +222,7 @@ class Post extends Model
 Relationships must be explicitly marked with the`#[Relation]`decorator to be available in formulas:
 
 ```php
-use MJ\Alchemist\Decorators\Relation;
+use Serri\Alchemist\Decorators\Relation;
 
 #[Relation] # Exposed to formulas as 'comments'
 public function comments(): HasMany
@@ -242,7 +242,7 @@ public function profile(): HasOne
 Model methods require the`#[Mutagen]`decorator to be accessible in formulas:
 
 ```php
-use MJ\Alchemist\Decorators\Mutagen;
+use Serri\Alchemist\Decorators\Mutagen;
 
 #[Mutagen] # Exposed to formulas as 'fullName'
 public function fullName(): string 
@@ -305,7 +305,7 @@ To transform model data using your formulas:
 ```php
 use App\Models\Post;
 use App\Formulas\PostFormula;
-use MJ\Alchemist\Facades\Alchemist;
+use Serri\Alchemist\Facades\Alchemist;
 
 // 1. Fetch your models
 $posts = Post::with('author.profile')->get();
@@ -390,7 +390,7 @@ $transformed = alchemist()->brew($posts);
 #### 2. Facade (For static contexts)
 
 ```php
-use MJ\Alchemist\Facades\Alchemist;
+use Serri\Alchemist\Facades\Alchemist;
 
 $data = Alchemist::brew($models);
 ```
@@ -398,7 +398,7 @@ $data = Alchemist::brew($models);
 #### 3. Dependency Injection (Recommended for controllers)
 
 ```php
-use MJ\Alchemist\Services\Alchemist;
+use Serri\Alchemist\Services\Alchemist;
 
 class PostController
 {

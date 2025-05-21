@@ -1,8 +1,8 @@
 <?php
 
-namespace MJ\Alchemist\Contracts;
+namespace Serri\Alchemist\Contracts;
 
-use MJ\Alchemist\Context\BrewingContext;
+use Serri\Alchemist\Context\BrewingContext;
 
 interface BrewingHandlerContract
 {

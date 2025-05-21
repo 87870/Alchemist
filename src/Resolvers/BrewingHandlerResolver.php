@@ -1,11 +1,11 @@
 <?php
 
-namespace MJ\Alchemist\Resolvers;
+namespace Serri\Alchemist\Resolvers;
 
 use InvalidArgumentException;
-use MJ\Alchemist\Contracts\BrewingHandlerContract;
-use MJ\Alchemist\Handlers\MultipleBrewingHandler;
-use MJ\Alchemist\Handlers\SingleBrewingHandler;
+use Serri\Alchemist\Contracts\BrewingHandlerContract;
+use Serri\Alchemist\Handlers\MultipleBrewingHandler;
+use Serri\Alchemist\Handlers\SingleBrewingHandler;
 
 /**
  * @internal

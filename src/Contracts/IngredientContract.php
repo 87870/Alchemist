@@ -1,6 +1,6 @@
 <?php
 
-namespace MJ\Alchemist\Contracts;
+namespace Serri\Alchemist\Contracts;
 
 interface IngredientContract
 {

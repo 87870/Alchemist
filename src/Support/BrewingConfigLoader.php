@@ -1,6 +1,6 @@
 <?php
 
-namespace MJ\Alchemist\Support;
+namespace Serri\Alchemist\Support;
 
 use Exception;
 use Illuminate\Support\Facades\File;

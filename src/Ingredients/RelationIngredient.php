@@ -1,11 +1,11 @@
 <?php
 
-namespace MJ\Alchemist\Ingredients;
+namespace Serri\Alchemist\Ingredients;
 
-use MJ\Alchemist\Contracts\IngredientContract;
-use MJ\Alchemist\Decorators\Relation;
-use MJ\Alchemist\Helpers\DecoratorHelper;
-use MJ\Alchemist\Services\Alchemist;
+use Serri\Alchemist\Contracts\IngredientContract;
+use Serri\Alchemist\Decorators\Relation;
+use Serri\Alchemist\Helpers\DecoratorHelper;
+use Serri\Alchemist\Services\Alchemist;
 
 final class RelationIngredient implements IngredientContract
 {

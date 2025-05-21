@@ -1,6 +1,6 @@
 <?php
 
-namespace MJ\Alchemist\Formulas;
+namespace Serri\Alchemist\Formulas;
 
 class Formula
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace MJ\Alchemist\Concerns;
+namespace Serri\Alchemist\Concerns;
 
-use MJ\Alchemist\Formulas\Formula;
+use Serri\Alchemist\Formulas\Formula;
 
 trait HasAlchemyFormulas
 {

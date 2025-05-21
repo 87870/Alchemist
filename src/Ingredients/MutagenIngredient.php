@@ -1,12 +1,12 @@
 <?php
 
 
-namespace MJ\Alchemist\Ingredients;
+namespace Serri\Alchemist\Ingredients;
 
 use Closure;
-use MJ\Alchemist\Contracts\IngredientContract;
-use MJ\Alchemist\Decorators\Mutagen;
-use MJ\Alchemist\Helpers\DecoratorHelper;
+use Serri\Alchemist\Contracts\IngredientContract;
+use Serri\Alchemist\Decorators\Mutagen;
+use Serri\Alchemist\Helpers\DecoratorHelper;
 use ReflectionClass;
 
 final class MutagenIngredient implements IngredientContract

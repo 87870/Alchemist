@@ -1,5 +1,5 @@
 {
-  "name": "mj/alchemist",
+  "name": "serri/alchemist",
   "version": "1.0.0",
   "description": "The JSON Revolution for Laravel, a simple, fast, and elegant alternative to Laravel JSON Resource. ",
   "license": "MIT",
@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "MJ\\Alchemist\\": "src/"
+      "Serri\\Alchemist\\": "src/"
     },
     "files": [
       "src/Helpers/functions.php"
@@ -25,13 +25,13 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "MJ\\Alchemist\\Tests\\": "tests/"
+      "Serri\\Alchemist\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "MJ\\Alchemist\\Providers\\AlchemistServiceProvider"
+        "Serri\\Alchemist\\Providers\\AlchemistServiceProvider"
       ]
     }
   }

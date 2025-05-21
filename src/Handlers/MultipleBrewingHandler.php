@@ -1,9 +1,9 @@
 <?php
 
-namespace MJ\Alchemist\Handlers;
+namespace Serri\Alchemist\Handlers;
 
-use MJ\Alchemist\Context\BrewingContext;
-use MJ\Alchemist\Contracts\BrewingHandlerContract;
+use Serri\Alchemist\Context\BrewingContext;
+use Serri\Alchemist\Contracts\BrewingHandlerContract;
 
 /**
  * @internal

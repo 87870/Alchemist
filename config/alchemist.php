@@ -4,47 +4,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Formulas Enabled
-    |--------------------------------------------------------------------------
-    |
-    | This value will determine whether the formulas_folder_path should exist or not.
-    |
-    */
-
-    'formulas_enabled' => true,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Formulas Path Strategy.
-    |--------------------------------------------------------------------------
-    |
-    | This value tells the alchemist where formulas should be defined, 'app' value implies that
-    | Formulas folder will be looked up for in the app folder and any other formulas folder exist
-    | otherwise will not be taken into consideration.
-    | meanwhile, 'modules' implies that Formulas folder will not be in app folder, yet should exist in
-    | modules folder in each of the module root path.
-    |
-    | values: [
-    |   'app' => 'default laravel application',
-    |   'modules' => 'nwidart/laravel-modules package required'
-    | ]
-    */
-
-    'formulas_path_strategy' => 'app',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Formulas Folder Path
-    |--------------------------------------------------------------------------
-    |
-    | This value will determine where the Formulas folder lives in your application codebase.
-    |
-    */
-
-    'formulas_folder_path' => app_path('Formulas'),
-
-    /*
-    |--------------------------------------------------------------------------
     | Ingredients
     |--------------------------------------------------------------------------
     |
@@ -67,24 +26,11 @@ return [
     */
 
     'ingredients' => [
-        \MJ\Alchemist\Ingredients\FillableIngredient::class,
-        \MJ\Alchemist\Ingredients\GuardedIngredient::class,
-        \MJ\Alchemist\Ingredients\MutagenIngredient::class,
-        \MJ\Alchemist\Ingredients\RelationIngredient::class,
+        \Serri\Alchemist\Ingredients\FillableIngredient::class,
+        \Serri\Alchemist\Ingredients\GuardedIngredient::class,
+        \Serri\Alchemist\Ingredients\MutagenIngredient::class,
+        \Serri\Alchemist\Ingredients\RelationIngredient::class,
 
         # Custom Ingredients goes here...
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Mutagens Attribute Name
-    |--------------------------------------------------------------------------
-    |
-    | This value determines the name of the attributes in the model class that holds an array of
-    | the names of the custom functions you might want the alchemist to use in the brew.
-    |
-    */
-
-    'mutagens_attribute_name' => 'mutagens'
-
+    ]
 ];

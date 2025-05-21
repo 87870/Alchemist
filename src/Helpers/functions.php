@@ -1,6 +1,6 @@
 <?php
 
-function alchemist(): \MJ\Alchemist\Services\Alchemist
+function alchemist(): \Serri\Alchemist\Services\Alchemist
 {
-    return new \MJ\Alchemist\Services\Alchemist();
+    return new \Serri\Alchemist\Services\Alchemist();
 }

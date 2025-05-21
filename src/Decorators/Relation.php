@@ -1,6 +1,6 @@
 <?php
 
-namespace MJ\Alchemist\Decorators;
+namespace Serri\Alchemist\Decorators;
 
 use Attribute as Decorator;
 

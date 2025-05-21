@@ -1,6 +1,6 @@
 <?php
 
-namespace MJ\Alchemist\Context;
+namespace Serri\Alchemist\Context;
 
 use Illuminate\Database\Eloquent\Collection as ECollection;
 use Illuminate\Support\Collection as SCollection;

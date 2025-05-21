@@ -1,9 +1,9 @@
 <?php
 
-namespace MJ\Alchemist\Handlers;
+namespace Serri\Alchemist\Handlers;
 
 use Exception;
-use MJ\Alchemist\Context\BrewingContext;
+use Serri\Alchemist\Context\BrewingContext;
 
 /**
  * @internal

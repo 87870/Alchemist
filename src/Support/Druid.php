@@ -1,12 +1,12 @@
 <?php
 
-namespace MJ\Alchemist\Support;
+namespace Serri\Alchemist\Support;
 
 use Illuminate\Database\Eloquent\Collection as ECollection;
 use Illuminate\Support\Collection as SCollection;
 use Illuminate\Database\Eloquent\Model;
-use MJ\Alchemist\Contracts\IngredientContract;
-use MJ\Alchemist\Helpers\DecoratorHelper;
+use Serri\Alchemist\Contracts\IngredientContract;
+use Serri\Alchemist\Helpers\DecoratorHelper;
 use ReflectionClass;
 use ReflectionException;
 
