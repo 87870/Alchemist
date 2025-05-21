@@ -4,6 +4,7 @@ namespace Serri\Alchemist\Services;
 
 use Illuminate\Database\Eloquent\Collection as ECollection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection as SCollection;
 use Serri\Alchemist\Context\BrewingContext;
 use Serri\Alchemist\Resolvers\BrewingHandlerResolver;
@@ -34,6 +35,18 @@ class Alchemist
         $this->context->setDecoction($handler->brew($this->context));
 
         return $this->context->decoction();
+    }
+
+    public function brewBatch(LengthAwarePaginator $paginator): LengthAwarePaginator
+    {
+        if (empty($paginator->items()))
+            return $paginator;
+
+        $brewing = $this->brew(collect($paginator->items()));
+
+        $paginator->setCollection(collect($brewing));
+
+        return $paginator;
     }
 
     /**

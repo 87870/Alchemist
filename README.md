@@ -370,7 +370,7 @@ return Alchemist::brew($post); // Auto-detects single model
 
 ```php
 $paginated = Post::paginate(15);
-return Alchemist::brew($paginated); // Preserves pagination structure
+return Alchemist::brewBatch($paginated); // Preserves pagination structure
 ```
 
 ### Syntax Variations

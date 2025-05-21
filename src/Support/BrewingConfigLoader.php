@@ -27,9 +27,6 @@ final class BrewingConfigLoader
         if (!array_key_exists('ingredients', $config) or $config['ingredients'] == '' or is_null($config['ingredients']) or !is_array($config['ingredients']))
             throw new Exception('ingredients key should exist with a value of the ingredients array.');
 
-        if (!array_key_exists('mutagens_attribute_name', $config) or $config['mutagens_attribute_name'] == '' or is_null($config['mutagens_attribute_name']))
-            throw new Exception('mutagens_attribute_name key should exist with a value of the mutagens_attribute_name.');
-
         return $config;
     }
 }

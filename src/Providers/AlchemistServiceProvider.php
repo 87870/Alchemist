@@ -29,12 +29,8 @@ class AlchemistServiceProvider extends ServiceProvider
         ], 'alchemist-config');
 
         $this->publishes([
-            __DIR__.'/../Formulas/Formula.php' => app_path('Formulas/Formula.php'),
+            __DIR__.'/../../stubs/formula.stub' => app_path('Formulas/Formula.php'),
         ], 'alchemist-formula');
-
-//        $this->publishes([
-//            __DIR__.'/Console/stubs/PressServiceProvider.stub' => app_path('Providers/PressServiceProvider.php'),
-//        ], 'press-provider');
     }
 
     protected function registerFacades(): void
