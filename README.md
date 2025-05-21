@@ -78,7 +78,7 @@ false dominion... and in its place conjures true magic.„*
 
 ---
 
-## 🔧 Installation
+## <a id="installation"></a> 🔧 Installation
 
 You may install Alchemist using the Composer package manager:
 
@@ -164,7 +164,7 @@ class UserFormula extends Formula
 }
 ```
 
-Relationships must be explicitly marked with the #[Relation] attribute to be available in formulas:
+Relationships must be explicitly marked with the `#[Relation]` attribute to be available in formulas:
 
 ---
 
